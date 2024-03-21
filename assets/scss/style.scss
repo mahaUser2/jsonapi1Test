@@ -1,0 +1,49 @@
+/* Import fonts */
+
+/* Variables */
+
+/* Typography */
+h1, h2, h3, h4, h5, h6{
+    text-wrap: balance;
+}
+
+p{
+    text-wrap: pretty;
+    max-width: 75ch;
+}
+
+/* Generel reset */
+
+*, *::before, *::after{
+    box-sizing: border-box; /* Set the sizing of an element to include it's border */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark mode user agent styles */
+html {
+    color-scheme: dark light;
+}
+
+body{
+    min-height: 100svh;
+}
+
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+
+// Smooth scrolling - her fra MDN
+// The prefers-reduced-motion CSS media feature is used to detect if a user has enabled a setting on their device to minimize the amount of non-essential motion. The setting is used to convey to the browser on the device that the user prefers an interface that removes, reduces, or replaces motion-based animations.
+@media (prefers-reduced-motion: no-preference){
+    //  :target rammer links med #top (eller lignende) der er aktive - selectoren kan erstattes af html {...
+    :has(:target){
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem,
+    }
+}
